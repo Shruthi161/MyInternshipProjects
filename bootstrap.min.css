@@ -1,0 +1,47 @@
+!(function(t, e) {
+    "object" == typeof exports && "undefined" != typeof module
+      ? (module.exports = e(require("@popperjs/core")))
+      : "function" == typeof define && define.amd
+      ? define(["@popperjs/core"], e)
+      : ((t =
+          "undefined" != typeof globalThis
+            ? globalThis
+            : t || self).bootstrap = e(t.Popper));
+  })(this, function (t) {
+    "use strict";
+    function e(t) {
+      if (t && t.__esModule) return t;
+      var e = Object.create(null);
+      return (
+        t &&
+          Object.keys(t).forEach(function (n) {
+            if ("default" !== n) {
+              var i = Object.getOwnPropertyDescriptor(t, n);
+              Object.defineProperty(
+                e,
+                n,
+                i.get
+                  ? i
+                  : {
+                      enumerable: !0,
+                      get: function () {
+                        return t[n];
+                      }
+                    }
+              );
+            }
+          }),
+        (e.default = t),
+        Object.freeze(e)
+      );
+    }
+    var n = e(t);
+    function i(t, e) {
+        for (var n = 0; n < e.length; n++) {
+          var i = e[n];
+          (i.enumerable = i.enumerable || !1),
+            (i.configurable = !0),
+            "value" in i && (i.writable = !0),
+            Object.defineProperty(t, i.key, i);
+        }
+      }
